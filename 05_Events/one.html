@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Events</title>
+</head>
+<body  style="background-color: #414114; color: white;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+            <li>
+                <img width="200px" id="photoshop"
+                 src="https://images.pexels.com/photos/3680219/pexels-photo-3680219.jpeg"
+                  alt="photoshop">
+            </li>
+            <li>
+                <img width="200px" id="japan"
+                 src="https://images.pexels.com/photos/1440476/pexels-photo-1440476.jpeg"
+                  alt="">
+              </li>
+              <li>
+                <img width="200px" id="Owl"
+                 src="https://images.pexels.com/photos/53977/eagle-owl-raptor-falconry-owl-53977.jpeg"
+                  alt="">
+            </li>
+              <li>
+                <img width="200px" id="River"
+                 src="https://images.pexels.com/photos/1179225/pexels-photo-1179225.jpeg"
+                  alt="">
+            </li>
+              <li>
+                <img width="200px" id="Prayer"
+                 src="https://images.pexels.com/photos/1278566/pexels-photo-1278566.jpeg"
+                  alt="">
+            </li>
+
+            <li><a style="color: aliceblue;" href="https://google.com" id="google"> Google</a></li>
+
+        </ul>
+    </div>
+</body>
+
+<script>
+  
+  //ONCLICK
+  
+  //  document.getElementById('Owl').onclick=function(){
+    //     alert("owl clicked")
+    //  }
+    
+    // EVENTLISTENER
+    
+    //type, timestamp, defaultPrevented,target, toElement, srcElement, currentTarget, clientX, screenX, screenY,altKey, sltKet, shitKey, keyCode
+    
+    //attachEvent()
+    //jQuery-on
+    
+    
+    //Event Bubbling: event bubble up from the target element to its top element
+
+
+//   document.getElementById('images').addEventListener('click', function(e){
+//     console.log("clicked inside ul");
+    
+//   },false)
+
+//    document.getElementById('Owl').addEventListener('click', function(e){
+//     console.log("clicked Owl");
+//     e.stopPropagation();// stop the event bubbling up to parent elements    
+//   },false)
+
+
+// EVENT CAPTURING: event starts from the top element and goes down to the target element
+//     document.getElementById('images').addEventListener('click', function(e){
+//     console.log("clicked inside ul");
+    
+//   },true)
+
+//    document.getElementById('Owl').addEventListener('click', function(e){
+//     console.log("clicked Owl");
+    
+//   },true)
+
+//   document.getElementById('google').addEventListener
+//   ('click',function(e){
+//     e.preventDefault();  // default action of the link is to open the link , but we are preventing it
+//      console.log("goggle link oepened");
+//      e.stopPropagation();
+     
+// },false)
+
+   //  P1: onclick image remove the image
+
+
+   document.querySelector('#images').addEventListener('click', function(e){
+  //  console.log(e.target.parentNode);
+  console.log(e.target.tagName);
+
+      if(e.target.tagName=='IMG'){
+            console.log(e.target.id)
+            let removeIt=e.target.parentNode;
+            removeIt.remove();
+      }
+ 
+   })
+
+   //removeIt.parentNode.removeChild(removeIt);
+
+</script>
+</html>
